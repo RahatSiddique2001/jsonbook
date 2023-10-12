@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newBook = [
         'title' => $_POST['title'],
         'author' => $_POST['author'],
-        'available' => (strtolower($_POST['available']) == 'true') ? true : false,
+        'available' => isset($_POST['available']), // Set to true if the checkbox is selected
         'pages' => $_POST['pages'],
         'isbn' => $_POST['isbn'],
     ];
