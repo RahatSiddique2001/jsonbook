@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newBook = [
         'title' => $_POST['title'],
         'author' => $_POST['author'],
-        'available' => isset($_POST['available']), // Set to true if the checkbox is selected
+        'available' => isset($_POST['available']),
         'pages' => $_POST['pages'],
         'isbn' => $_POST['isbn'],
     ];
@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Manager</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Add this line to link the CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
