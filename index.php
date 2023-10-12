@@ -38,22 +38,11 @@ if (isset($_GET['id'])) {
 <html lang="en">
 
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Manager</title>
-    <style>
-        table {
-            font-size: 1.05em;
-        }
-
-        th, td {
-            padding: 10px;
-        }
-
-        input[type="text"], input[type="number"], input[type="checkbox"] {
-            font-size: 1.05em;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Add this line to link the CSS file -->
 </head>
 
 <body>
