@@ -1,7 +1,14 @@
 <?php
-
-
 $books = json_decode(file_get_contents('books.json'), true);
+
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = strtolower($_GET['search']);
+    $books = array_filter($books, function($book) use ($search) {
+        return stripos(strtolower($book['title']), $search) !== false ||
+               stripos(strtolower($book['author']), $search) !== false ||
+               stripos(strtolower($book['isbn']), $search) !== false;
+    });
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newBook = [
@@ -34,10 +41,23 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Manager</title>
+    <style>
+        table {
+            font-size: 1.05em;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        input[type="text"], input[type="number"], input[type="checkbox"] {
+            font-size: 1.05em;
+        }
+    </style>
 </head>
 
 <body>
-    <h1><center>My Book Library</center></h1>
+    <h1><center>Book Library</center></h1>
     <form action="index.php" method="GET">
         <input type="text" name="search" size="32" placeholder="Enter title, author, or ISBN..." value=<?php echo (isset($_GET['search'])) ? $_GET['search'] : "" ?>>
         <input type="submit" value="🔍 Search">
@@ -69,10 +89,11 @@ if (isset($_GET['id'])) {
                 <td><input type="number" name="isbn" placeholder="ISBN" required></td>
                 <td><input type="submit" value="➕ Add"></td>
             </tr>
+        </form>
     </table>
     <br>
     <br>
-    <a href="books.json" target="_blank">View The JSON Contents</a>
+    <a href="books.json" target="_blank">click to see Json Contents</a>
 </body>
 
 </html>
