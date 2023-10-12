@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
-    <h1><center>Book Library</center></h1>
+    <h1><center>Book Query</center></h1>
     <form action="index.php" method="GET">
         <input type="text" name="search" size="32" placeholder="Enter title, author, or ISBN..." value=<?php echo (isset($_GET['search'])) ? $_GET['search'] : "" ?>>
         <input type="submit" value="🔍 Search">
