@@ -14,10 +14,17 @@
         "isbn": 9780547249643
     },
     {
-        "title": "One Hundred Years Of Solitude",
+        "title": "\"One Hundred Years Of Solitude",
         "author": "Gabriel Garcia Marquez",
         "available": false,
-        "pages": 457,
-        "isbn": 9785267006323
+        "pages": "457",
+        "isbn": "9785267006323"
+    },
+    {
+        "title": "Ikigai",
+        "author": "Forgot",
+        "available": false,
+        "pages": "257",
+        "isbn": "9785267006323"
     }
 ]

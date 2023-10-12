@@ -77,7 +77,7 @@ if (isset($_GET['id'])) {
                 <td><?= $book['available'] ? 'True' : 'False' ?></td>
                 <td><?= $book['pages'] ?></td>
                 <td><?= $book['isbn'] ?></td>
-                <td><a href="index.php?id=<?php echo $key ?>"><button>➖ Remove</button></a></td>
+                <td><a href="index.php?id=<?php echo $key ?>"><button>➖ Delete</button></a></td>
             </tr>
         <?php endforeach; ?>
         <form action="index.php" method="POST">
@@ -87,7 +87,7 @@ if (isset($_GET['id'])) {
                 <td><input type="checkbox" name="available" checked> </td>
                 <td><input type="number" name="pages" placeholder="Pages" required></td>
                 <td><input type="number" name="isbn" placeholder="ISBN" required></td>
-                <td><input type="submit" value="➕ Add"></td>
+                <td><input type="submit" value="➕ Save"></td>
             </tr>
         </form>
     </table>
